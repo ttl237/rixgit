@@ -1,0 +1,19 @@
+# Nix build output
+result
+result-*
+
+# R session files
+.Rhistory
+.RData
+.Rproj.user/
+
+# R profile (usually local-only)
+.Rprofile
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# rixpress internal build metadata
+_rixpress/
