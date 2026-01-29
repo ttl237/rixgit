@@ -76,13 +76,15 @@ rixgit/
 ## Running the Pipeline
 
 ### Step 3 — Generate environment (once)
-### `source("gen-env.R")`
-This generates default.nix.
+**`source("gen-env.R")`**
+This generates **`default.nix`**
+
+
 ---
 ## Technology Stack
 
 ### R side
-
+th
 * rix  
 * rixpress  
 * ggplot2  
