@@ -48,28 +48,33 @@ Everything is:
 
 ## Repository Structure
 
+```
 rixgit/
 │
-├── data/ # Input dataset
-│ └── HeartDiseaseTrain-Test.csv
+├── data/                    # Input dataset
+│   └── HeartDiseaseTrain-Test.csv
 │
-├── functions.py # Python ML + plotting functions
-├── functions.R # R visualization + encoders
+├── functions.py             # Python ML + plotting functions
+├── functions.R              # R visualization + encoders
 │
-├── gen-env.R # Environment specification (rix → Nix)
-├── default.nix # Auto-generated reproducible environment
+├── gen-env.R                # Environment specification (rix → Nix)
+├── default.nix              # Auto-generated reproducible environment
 │
-├── gen-pipeline.R # Pipeline definition (rixpress)
-├── pipeline.nix # Auto-generated pipeline build spec
+├── gen-pipeline.R           # Pipeline definition (rixpress)
+├── pipeline.nix             # Auto-generated pipeline build spec
 │
-├── tests/ # Unit tests
-│ ├── test_functions.py # pytest (Python)
-│ └── testthat/ # testthat (R)
-│ └── test-functions.R
+├── tests/                   # Unit tests
+│   ├── test_functions.py    # pytest (Python)
+│   └── testthat/            # testthat (R)
+│       └── test-functions.R
 │
-├── pytest.ini # pytest configuration
-├── README.md # Project documentation
-└── _rixpress/ # rixpress internal state
+├── pytest.ini                # pytest configuration
+├── README.md                 # Project documentation
+└── _rixpress/                # rixpress internal state
+```
+
+
+
 
 ---
 
