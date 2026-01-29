@@ -76,8 +76,7 @@ rixgit/
 ## Running the Pipeline
 
 ### Step 3 — Generate environment (once)
-
-`source("gen-env.R")`
+### `source("gen-env.R")`
 ---
 ## Technology Stack
 
