@@ -77,6 +77,7 @@ rixgit/
 
 ### Step 3 — Generate environment (once)
 ### `source("gen-env.R")`
+This generates default.nix.
 ---
 ## Technology Stack
 
