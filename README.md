@@ -178,7 +178,7 @@ Artifacts flow automatically across languages.
 ```bash
 git clone git@github.com:ttl237/rixgit.git
 cd rixgit
-
+```
 ### Step 2 — Build the environment
 
 ```bash
