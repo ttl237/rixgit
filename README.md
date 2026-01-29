@@ -72,16 +72,6 @@ rixgit/
 ├── README.md                 # Project documentation
 └── _rixpress/                # rixpress internal state
 ```
-### Step 2 — Build the environment
-
-```bash
-nix-build
-nix-shell
-
-### Step 3 — Generate environment (once)
-
-```r
-source("gen-env.R")
 
 ## Technology Stack
 
