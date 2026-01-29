@@ -179,3 +179,142 @@ Artifacts flow automatically across languages.
 git clone git@github.com:ttl237/rixgit.git
 cd rixgit
 
+### Step 2 — Build the environment
+
+```bash
+nix-build
+nix-shell
+```
+
+### Step 3 — Generate environment (once)
+
+```r
+source("gen-env.R")
+```
+
+This generates `default.nix`.
+
+### Step 4 — Build pipeline
+
+```r
+source("gen-pipeline.R")
+```
+
+or
+
+```r
+rxp_make()
+```
+
+## Inspecting Outputs
+
+### List all artifacts
+
+```r
+rxp_inspect()
+```
+
+### Read any artifact
+
+```r
+rxp_read("confusion_matrix")
+rxp_read("accuracy")
+```
+
+### Load into R environment
+
+```r
+rxp_load("evaluation_df")
+```
+
+## Visualizing Plots
+
+Plots are produced as real PNG files stored in the Nix store.
+
+### Visualize any plot
+
+```r
+show_png_derivation("target_dist_plot_png")
+show_png_derivation("correlation_heatmap_png")
+show_png_derivation("confusion_matrix_plot_png")
+```
+
+## Testing
+
+### Python tests
+
+```bash
+pytest
+```
+
+### R tests
+
+```bash
+R -q -f tests/testthat.R
+```
+
+## Test Coverage
+
+All core functions are unit-tested:
+
+- Happy path  
+- Edge cases  
+- Error conditions  
+
+## Reproducibility Guarantee
+
+```bash
+git clone git@github.com:ttl237/rixgit.git
+cd rixgit
+nix-build
+nix-shell
+R
+source("gen-pipeline.R")
+```
+
+No version conflicts.  
+No dependency guessing.  
+No environment mismatch.  
+No hidden state.
+
+## Scientific Workflow Principles
+
+- Functional programming  
+- Pure functions  
+- Explicit data flow  
+- Deterministic execution  
+- Immutable artifacts  
+- Declarative environments  
+- Test-driven design  
+
+## Why This Matters
+
+This is not just a pipeline — it is a **scientific computing system**.
+
+It enables:
+
+- Reproducible research  
+- Auditable science  
+- Collaborative science  
+- Scalable science  
+- Production ML workflows  
+
+## Status
+
+✔ Environment reproducible  
+✔ Pipeline reproducible  
+✔ Cross-language integration  
+✔ Automated builds  
+✔ Unit-tested logic  
+✔ Versioned history  
+✔ Deterministic outputs  
+
+## Author
+
+Project developed as a reproducible scientific ML pipeline using:
+
+**Nix + R + Python + rix + rixpress + Git**
+
+## License
+
+MIT License
