@@ -72,7 +72,7 @@ rixgit/
 ├── README.md                 # Project documentation
 └── _rixpress/                # rixpress internal state
 ```
-
+---
 ## Technology Stack
 
 ### R side
