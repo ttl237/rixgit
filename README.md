@@ -77,7 +77,6 @@ rixgit/
 
 ### Step 3 — Generate environment (once)
 
-```r
 source("gen-env.R")
 ---
 ## Technology Stack
