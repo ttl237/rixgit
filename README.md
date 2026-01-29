@@ -73,19 +73,6 @@ rixgit/
 └── _rixpress/                # rixpress internal state
 ```
 ---
-## Running the Pipeline
-
-### Step 2 — Build the environment
-on the bash
-nix-build
-nix-shell
-
-### Step 3 — Generate environment (once)
-**`source("gen-env.R")`**
-* This generates **`default.nix`**
-
-
----
 ## Technology Stack
 
 ### R side
