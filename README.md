@@ -73,6 +73,13 @@ rixgit/
 └── _rixpress/                # rixpress internal state
 ```
 ---
+## Running the Pipeline
+
+### Step 3 — Generate environment (once)
+
+```r
+source("gen-env.R")
+---
 ## Technology Stack
 
 ### R side
