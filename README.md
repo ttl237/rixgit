@@ -75,28 +75,28 @@ rixgit/
 ---
 ## Technology Stack
 
-### R side
-th
-* rix  
-* rixpress  
-* ggplot2  
-* yardstick  
-* dplyr  
-* testthat  
+### R
 
-### Python side
+- rix  
+- rixpress  
+- ggplot2  
+- yardstick  
+- dplyr  
+- testthat  
 
-* numpy  
-* pandas  
-* scikit-learn
-* matplotlib  
-* seaborn  
-* pytest  
+### Python
+
+- numpy  
+- pandas  
+- scikit-learn  
+- matplotlib  
+- seaborn  
+- pytest  
 
 ### System
 
-* Nix  
-* Git  
+- Nix  
+- Git  
 
 ---
 
@@ -110,12 +110,12 @@ Defines the **entire execution environment** using `{rix}`.
 
 This generates `default.nix`, which specifies:
 
-* OS-level dependencies  
-* R version  
-* Python version  
-* All R packages  
-* All Python packages  
-* System libraries  
+- OS-level dependencies  
+- R version  
+- Python version  
+- All R packages  
+- All Python packages  
+- System libraries  
 
 This guarantees **bit-for-bit reproducibility**.
 
@@ -127,15 +127,15 @@ Defines the **entire computational pipeline** using `{rixpress}`.
 
 Each step is explicitly declared as:
 
-* `rxp_py()` → Python step  
-* `rxp_r()` → R step  
+- `rxp_py()` → Python step  
+- `rxp_r()` → R step  
 
 Each step:
 
-* Has explicit inputs  
-* Has explicit outputs  
-* Produces named artifacts  
-* Is language-agnostic in dependency chaining  
+- Has explicit inputs  
+- Has explicit outputs  
+- Produces named artifacts  
+- Is language-agnostic in dependency chaining  
 
 Artifacts flow automatically across languages.
 
@@ -143,37 +143,35 @@ Artifacts flow automatically across languages.
 
 ## Pipeline Outputs
 
-After running the pipeline, the main artifacts include:
-
 ### Data artifacts
 
-* `raw_df`  
-* `encoded_df`  
-* `processed_data`  
-* `evaluation_df`  
+- `raw_df`  
+- `encoded_df`  
+- `processed_data`  
+- `evaluation_df`  
 
 ### Model artifacts
 
-* `svm_rbf_model`  
+- `svm_rbf_model`  
 
 ### Prediction artifacts
 
-* `y_pred`  
+- `y_pred`  
 
 ### Evaluation artifacts
 
-* `accuracy`  
-* `confusion_matrix`  
+- `accuracy`  
+- `confusion_matrix`  
 
 ### Plot artifacts
 
-* `target_dist_plot_png`  
-* `correlation_heatmap_png`  
-* `confusion_matrix_plot_png`  
+- `target_dist_plot_png`  
+- `correlation_heatmap_png`  
+- `confusion_matrix_plot_png`  
 
 ---
 
-## Running the Pipeline (Reproducibly)
+# Running the Pipeline (Reproducibly)
 
 ### Step 1 — Clone the repository
 
@@ -181,119 +179,3 @@ After running the pipeline, the main artifacts include:
 git clone git@github.com:ttl237/rixgit.git
 cd rixgit
 
-Step 2 — Build the environment
-nix-build
-nix-shell
-
-Step 3 — Generate environment (once)
-source("gen-env.R")
-
-
-This generates default.nix.
-
-Step 4 — Build pipeline
-source("gen-pipeline.R")
-
-
-or
-
-rxp_make()
-
-Inspecting Outputs
-List all artifacts
-rxp_inspect()
-
-Read any artifact
-rxp_read("confusion_matrix")
-rxp_read("accuracy")
-
-Load into R environment
-rxp_load("evaluation_df")
-
-Visualizing Plots
-
-Plots are produced as real PNG files stored in the Nix store.
-
-Visualize any plot
-show_png_derivation("target_dist_plot_png")
-show_png_derivation("correlation_heatmap_png")
-show_png_derivation("confusion_matrix_plot_png")
-
-Testing
-Python tests
-pytest
-
-R tests
-R -q -f tests/testthat.R
-
-Test Coverage
-
-All core functions are unit-tested:
-
-Happy path
-
-Edge cases
-
-Error conditions
-
-Reproducibility Guarantee
-git clone git@github.com:ttl237/rixgit.git
-cd rixgit
-nix-build
-nix-shell
-R
-source("gen-pipeline.R")
-
-
-No version conflicts.
-No dependency guessing.
-No environment mismatch.
-No hidden state.
-
-Scientific Workflow Principles
-
-Functional programming
-
-Pure functions
-
-Explicit data flow
-
-Deterministic execution
-
-Immutable artifacts
-
-Declarative environments
-
-Test-driven design
-
-Why This Matters
-
-This is not just a pipeline — it is a scientific computing system.
-
-It enables:
-
-Reproducible research
-
-Auditable science
-
-Collaborative science
-
-Scalable science
-
-Production ML workflows
-
-Status
-
-✔ Environment reproducible
-✔ Pipeline reproducible
-✔ Cross-language integration
-✔ Automated builds
-✔ Unit-tested logic
-✔ Versioned history
-✔ Deterministic outputs
-
-Author
-
-Project developed as a reproducible scientific ML pipeline using:
-
-Nix + R + Python + rix + rixpress + Git
