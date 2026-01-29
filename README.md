@@ -83,8 +83,6 @@ nix-shell
 ```r
 source("gen-env.R")
 
----
-
 ## Technology Stack
 
 ### R side
