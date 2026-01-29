@@ -88,7 +88,7 @@ th
 
 * numpy  
 * pandas  
-* scikit-learn  
+* scikit-learn
 * matplotlib  
 * seaborn  
 * pytest  
